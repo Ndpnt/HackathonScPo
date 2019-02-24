@@ -1,0 +1,58 @@
+extends layout
+
+block content
+  div.profile
+    div.profile__info
+      div.profile__info__banner(style="background-image: url(#{user.profile_banner_url})")
+      div.profile__info__summary
+        div.level.profile__info__stats
+          img.profile__info__image(src="#{user.profile_image_url.replace('_normal', '')}")
+          div.level-item.has-text-centered
+            div
+              p.heading Tweets
+              p.title #{user.statuses_count}
+          div.level-item.has-text-centered
+            div
+              p.heading Abonnements
+              p.title #{user.friends_count}
+          div.level-item.has-text-centered
+            div
+              p.heading Abonnés
+              p.title #{user.followers_count}
+          div.level-item.has-text-centered
+            div
+              p.heading J'aime
+              p.title #{user.favourites_count}
+
+        div.profile__info__content
+          p
+            span.name #{user.name}
+            span.screen_name @#{user.screen_name}
+            span.location #{user.location}
+            span.icon.has-text-info
+              i.fas.fa-info-circle
+          p #{user.description}
+
+      div.profile__info__timeline
+        a.twitter-timeline(href="#https://twitter.com/#{user.screen_name}") Tweets by #{user.screen_name}
+        script(async, src="https://platform.twitter.com/widgets.js", charset="utf-8")
+
+    div.profile__analysis
+      iframe(src="https://accountanalysis.lucahammer.com/#{user.screen_name}")
+
+  footer.classifier
+    form(action="#{user.screen_name}", method="POST")
+      input(type="hidden", name="category", value="Human")
+      button.classifier__action.button.is-medium.is-success(type=submit) Human
+
+    form(action="#{user.screen_name}", method="POST")
+      input(type="hidden", name="category", value="Bot")
+      button.classifier__action.button.is-medium.is-warning(type=submit) Bot
+
+    form(action="#{user.screen_name}", method="POST")
+      input(type="hidden", name="category", value="TrollBot")
+      button.classifier__action.button.is-medium.is-warning(type=submit) TrollBot
+
+    form(action="#{user.screen_name}", method="POST")
+      input(type="hidden", name="category", value="Other")
+      button.classifier__action.button.is-medium(type=submit) Other
