@@ -9,29 +9,29 @@ const Twitter = new Twit({
 });
 
 const twitterUserSchema = new mongoose.Schema({
-  screen_name: {
-    type: String,
-    required: true,
-    unique: true
-  },
-  category: String,
-  twitterData: Object
+	screen_name: {
+		type: String,
+		required: true,
+		unique: true
+	},
+	category: String,
+	twitterData: Object
 });
 
 twitterUserSchema.methods.fetchTwitterData = function fetchTwitterData () {
-  return new Promise((resolve, reject) => {
-    Twitter.get('users/show', { screen_name: this.screen_name }, (error, twitterData, response) => {
-      if (error) {
-        return reject(error);
-      }
+	return new Promise((resolve, reject) => {
+		Twitter.get('users/show', { screen_name: this.screen_name }, (error, twitterData, response) => {
+			if (error) {
+				return reject(error);
+			}
 
-      this.twitterData = twitterData;
+			this.twitterData = twitterData;
 
-      this.save()
-        .then(resolve)
-        .catch(reject);
-    });
-  });
+			this.save()
+				.then(resolve)
+				.catch(reject);
+		});
+	});
 };
 
 const TwitterUser = mongoose.model('TwitterUser', twitterUserSchema);

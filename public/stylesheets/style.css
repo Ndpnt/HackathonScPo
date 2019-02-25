@@ -1,100 +1,100 @@
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  margin: 0;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	margin: 0;
 }
 
 
 
 .profile {
-  display: flex;
-  flex: 1;
-  height: 90vh;
-  background: #E7ECEF;
+	display: flex;
+	flex: 1;
+	height: 90vh;
+	background: #E7ECEF;
 }
 
 .profile__info {
-  flex: 3;
-  overflow: auto;
-  position: relative;
+	flex: 3;
+	overflow: auto;
+	position: relative;
 }
 
 .profile__info__banner {
-  height: 360px;
-  background-position: center center;
-  background-clip: content-box;
+	height: 360px;
+	background-position: center center;
+	background-clip: content-box;
 }
 
 .profile__info__summary {
-  padding: 10px 220px;
-  background: white;
-  position: relative;
-  margin-bottom: 1em;
+	padding: 10px 220px;
+	background: white;
+	position: relative;
+	margin-bottom: 1em;
 }
 
 .profile__info__stats {
-  max-width: 600px;
-  margin: auto;
+	max-width: 600px;
+	margin: auto;
 }
 
 .profile__info__image {
-  border-radius: 100%;
-  height: 200px;
-  width: 200px;
-  border: 5px solid white;
-  position: absolute;
-  top: -140px;
-  left: 20px;
+	border-radius: 100%;
+	height: 200px;
+	width: 200px;
+	border: 5px solid white;
+	position: absolute;
+	top: -140px;
+	left: 20px;
 }
 
 .profile__info__content .name,
 .profile__info__content .screen_name,
 .profile__info__content .location {
-  display: inline-block;
-  margin-right: 1em;
+	display: inline-block;
+	margin-right: 1em;
 }
 
 .profile__info__content .name {
-  font-weight: bold;
+	font-weight: bold;
 }
 
 .profile__info__content .screen_name,
 .profile__info__content .location {
-  color: #657786;
+	color: #657786;
 }
 
 .profile__info__timeline {
-  max-width: 600px;
-  margin: auto;
+	max-width: 600px;
+	margin: auto;
 }
 
 .profile__analysis {
-  background: white;
-  flex: 2;
-  border-left: 1px solid #CCC;
+	background: white;
+	flex: 2;
+	border-left: 1px solid #CCC;
 }
 
 .profile__analysis iframe {
-  height: 100%;
-  width: 100%;
+	height: 100%;
+	width: 100%;
 }
 
 
 .classifier {
-  border-top: 1px solid #DDD;
-  min-height: 10vh;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  box-shadow: 0px -4px 10px 0 rgba(0,0,0,0.1);
-  z-index: 1;
+	border-top: 1px solid #DDD;
+	min-height: 10vh;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	box-shadow: 0px -4px 10px 0 rgba(0,0,0,0.1);
+	z-index: 1;
 }
 
 .classifier__action {
-  min-width: 8em;
+	min-width: 8em;
 }
